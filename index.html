@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>سياسات MyKanz | سياسة الخصوصية والشروط</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
+            color: white;
+            padding: 30px 20px;
+            border-radius: 16px 16px 0 0;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+        
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .last-updated {
+            background-color: #fff3e0;
+            padding: 8px 16px;
+            text-align: center;
+            font-size: 13px;
+            color: #e65100;
+            border-bottom: 1px solid #ffe0b2;
+        }
+        
+        .policy-section {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            background-color: #f9f9f9;
+            padding: 16px 20px;
+            border-bottom: 3px solid #2E7D32;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .section-title:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .section-title .arrow {
+            transition: transform 0.3s ease;
+            font-size: 20px;
+        }
+        
+        .section-title.active .arrow {
+            transform: rotate(180deg);
+        }
+        
+        .policy-content {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.3s ease;
+        }
+        
+        .policy-content.active {
+            max-height: 2000px;
+            padding: 20px;
+        }
+        
+        h3 {
+            color: #2E7D32;
+            margin: 20px 0 10px 0;
+            font-size: 18px;
+        }
+        
+        h4 {
+            color: #555;
+            margin: 15px 0 8px 0;
+            font-size: 16px;
+        }
+        
+        p {
+            margin-bottom: 12px;
+        }
+        
+        ul, ol {
+            margin: 10px 0 15px 25px;
+        }
+        
+        li {
+            margin-bottom: 6px;
+        }
+        
+        .highlight-box {
+            background-color: #e8f5e9;
+            border-right: 4px solid #2E7D32;
+            padding: 12px 16px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        
+        .contact-box {
+            background-color: #e3f2fd;
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .contact-box a {
+            color: #1565C0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: #888;
+        }
+        
+        button {
+            background-color: #2E7D32;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+            .section-title {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📱 سياسات تطبيق MyKanz</h1>
+            <p>سياسة الخصوصية | الشروط والأحكام | الإرجاع والاسترداد | سياسة التوصيل</p>
+        </div>
+        <div class="last-updated">
+            📅 آخر تحديث: 25 أبريل 2026
+        </div>
+
+        <!-- القسم 1: سياسة الخصوصية -->
+        <div class="policy-section">
+            <div class="section-title" onclick="toggleSection(this)">
+                <span>🔒 1. سياسة الخصوصية</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="policy-content">
+                <p><strong>تاريخ السريان:</strong> 25 أبريل 2026</p>
+                
+                <h3>١. ما هي المعلومات التي نجمعها؟</h3>
+                <ul>
+                    <li><strong>بيانات الحساب:</strong> الاسم، اسم العائلة، رقم الهاتف، والبريد الإلكتروني (عند توفيره).</li>
+                    <li><strong>بيانات الموقع:</strong> نجمع <strong>موقعك الدقيق</strong> لعرض المتاجر المتاحة والتحقق من إمكانية التوصيل إلى منطقتك.</li>
+                    <li><strong>بيانات الجهاز:</strong> معرف الإشعارات (Token) لإرسال تحديثات الطلب.</li>
+                </ul>
+
+                <h3>٢. كيف نستخدم بياناتك؟</h3>
+                <ul>
+                    <li>معالجة طلبات الدفع عند الاستلام.</li>
+                    <li>إرسال <strong>إشعارات فورية</strong> حول حالة الطلب (مثل "طلبك قيد التوصيل").</li>
+                    <li>التحقق من أن عنوانك ضمن مناطق التوصيل المتاحة.</li>
+                </ul>
+
+                <h3>٣. الموافقة على الإشعارات والموقع</h3>
+                <p>باستخدام MyKanz، أنت توافق على استلام الإشعارات الفورية. يمكنك إيقاف تشغيلها من إعدادات جهازك. كما توافق على مشاركة موقعك لتسهيل عملية التوصيل.</p>
+
+                <h3>٤. أمان البيانات (وفقًا للقانون الإسرائيلي)</h3>
+                <p>نطبق إجراءات أمان البيانات المطلوبة بموجب لوائح حماية الخصوصية الإسرائيلية (أمن البيانات)، 5777-2017 لحماية معلوماتك الشخصية.</p>
+
+                <div class="highlight-box">
+                    <strong>⚠️ ملاحظة مهمة:</strong> لن نشارك رقم هاتفك أو عنوانك مع أي طرف ثالث لأغراض تسويقية.
+                </div>
+
+                <h3>٥. حقوقك</h3>
+                <p>يحق لك طلب حذف حسابك وبياناتك في أي وقت عن طريق مراسلتنا على البريد الإلكتروني أدناه.</p>
+            </div>
+        </div>
+
+        <!-- القسم 2: الشروط والأحكام -->
+        <div class="policy-section">
+            <div class="section-title" onclick="toggleSection(this)">
+                <span>📜 2. الشروط والأحكام</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="policy-content">
+                <h3>١. الموافقة على الشروط</h3>
+                <p>باستخدام تطبيق MyKanz، فإنك توافق على هذه الشروط. إذا كنت لا توافق، يرجى عدم استخدام التطبيق.</p>
+
+                <h3>٢. الأهلية</h3>
+                <p>يجب أن يكون عمرك 18 سنة أو أكثر لاستخدام MyKanz. بتقديم طلب، أنت تؤكد أنك تقيم في إحدى مدن التوصيل لدينا.</p>
+
+                <h3>٣. الدفع عند الاستلام (COD)</h3>
+                <ul>
+                    <li>يتم الدفع <strong>نقداً</strong> مباشرة لموصل الطلب عند استلام البضاعة.</li>
+                    <li>لا تعطي نقوداً لأي شخص ليس موصلاً رسمياً لـ MyKanz ببطاقة تعريف صالحة.</li>
+                </ul>
+
+                <h3>٤. سلوك المستخدم</h3>
+                <p>توافق على عدم استخدام التطبيق لأي نشاط احتيالي أو مضايقة سائقي التوصيل.</p>
+
+                <h3>٥. تحديد المسؤولية</h3>
+                <p>MyKanz غير مسؤول عن التأخير الناجم عن الطقس، الأحوال الأمنية، أو الازدحام المروري داخل إسرائيل.</p>
+            </div>
+        </div>
+
+        <!-- القسم 3: سياسة الإرجاع والاسترداد -->
+        <div class="policy-section">
+            <div class="section-title" onclick="toggleSection(this)">
+                <span>💰 3. سياسة الإرجاع والاسترداد</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="policy-content">
+                <h3>١. المنتجات التالفة أو الخاطئة</h3>
+                <p>نظراً لأنك تدفع نقداً عند الاستلام، <strong>افحص المنتج قبل تسليم النقود.</strong> إذا كان المنتج تالفاً أو خاطئاً:</p>
+                <ul>
+                    <li><strong>حق الرفض:</strong> يحق لك رفض الاستلام عند الباب. لن يتم تحصيل أي مبلغ منك.</li>
+                    <li><strong>الإرجاع بعد القبول:</strong> إذا لاحظت عيباً بعد قبول المنتج، يجب الاتصال بنا خلال <strong>48 ساعة</strong> من التوصيل.</li>
+                </ul>
+
+                <h3>٢. حق الإلغاء (وفقًا لقانون حماية المستهلك الإسرائيلي)</h3>
+                <p>بموجب قانون حماية المستهلك الإسرائيلي، لديك 14 يوماً لإلغاء الصفقة، مع مراعاة الاستثناءات أدناه. بما أننا نستخدم الدفع عند الاستلام:</p>
+                <ul>
+                    <li>سيتم إصدار المبالغ المستردة كـ <strong>رصيد في محفظة MyKanz</strong> أو تحويل بنكي (في غضون 14 يوماً).</li>
+                    <li><strong>الاستثناءات:</strong> لا يمكن إرجاع المواد القابلة للتلف، المنتجات الحميمة، أو المنتجات المصنوعة خصيصاً حسب الطلب.</li>
+                </ul>
+
+                <h3>٣. كيفية الإرجاع</h3>
+                <ol>
+                    <li>اتصل بالدعم عبر دردشة التطبيق.</li>
+                    <li>احتفظ بالمنتج مغلقاً/غير مستخدم.</li>
+                    <li>سنقوم بترتيب استلامه من عنوانك.</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- القسم 4: سياسة التوصيل -->
+        <div class="policy-section">
+            <div class="section-title" onclick="toggleSection(this)">
+                <span>🚚 4. سياسة التوصيل والشحن</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="policy-content">
+                <h3>١. مناطق التوصيل</h3>
+                <p>نقوم حالياً بالتوصيل فقط إلى المدن المحددة والمذكورة في التطبيق. <strong>لا نقوم بالتوصيل إلى المناطق غير المصرح بها.</strong></p>
+
+                <h3>٢. مدة التوصيل</h3>
+                <ul>
+                    <li><strong>وقت المعالجة:</strong> 1-2 أيام عمل.</li>
+                    <li><strong>الشحن:</strong> 2-5 أيام عمل حسب مدينتك.</li>
+                    <li><strong>الإشعارات:</strong> ستتلقى إشعاراً فورياً عندما يكون السائق على بعد 15 دقيقة.</li>
+                </ul>
+
+                <h3>٣. محاولات التوصيل الفاشلة</h3>
+                <ul>
+                    <li>إذا لم تكن في المنزل لاستلام الطلب ودفع النقود، سيحاول السائق الاتصال بك مرة واحدة.</li>
+                    <li>إذا فشلت المحاولة الثانية، سيتم إلغاء الطلب وقد يتم تحصيل رسوم خدمة من حسابك مقابل تكاليف الخدمات اللوجستية المهدرة.</li>
+                </ul>
+
+                <h3>٤. رسوم التوصيل</h3>
+                <p>يتم حساب رسوم التوصيل بناءً على موقعك الدقيق وتظهر في سلة التسوق قبل الدفع.</p>
+
+                <div class="highlight-box">
+                    <strong>✅ نصائح مهمة:</strong> تأكد من أن رقم هاتفك صحيح لتلقي تحديثات الطلب عبر الإشعارات والرسائل النصية.
+                </div>
+            </div>
+        </div>
+
+        <!-- قسم معلومات الاتصال -->
+        <div class="contact-box">
+            <strong>📞 للاستفسارات أو الإبلاغ عن مشكلة</strong><br>
+            البريد الإلكتروني: <a href="mailto:support@mykanz.com">support@mykanz.com</a><br>
+            الهاتف / واتساب: [أدخل رقم هاتفك]<br>
+            <span style="font-size: 12px;">سنرد عليك خلال 5 أيام عمل كحد أقصى</span>
+        </div>
+
+        <div class="footer">
+            © 2026 تطبيق MyKanz - جميع الحقوق محفوظة<br>
+	    <button onclick="window.print()">🖨️ طباعة السياسات</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleSection(element) {
+            // Toggle active class on title
+            element.classList.toggle('active');
+            
+            // Find the content div (next sibling)
+            const content = element.nextElementSibling;
+            content.classList.toggle('active');
+        }
+        
+        // Open first section by default for better UX
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstTitle = document.querySelector('.section-title');
+            if (firstTitle) {
+                firstTitle.classList.add('active');
+                const firstContent = firstTitle.nextElementSibling;
+                firstContent.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
