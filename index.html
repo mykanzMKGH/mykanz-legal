@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="מדיניות פרטיות, תנאי שימוש, מדיניות החזרים ומדיניות משלוחים - אפליקציית MyKanz">
+    <meta name="description" content="سياسة الخصوصية - تطبيق MyKanz - מדיניות פרטיות - אפליקציית MyKanz">
     <meta name="robots" content="index, follow">
     <meta name="language" content="ar, he">
-    <title>MyKanz | سياسات التطبيق | מדיניות האפליקציה</title>
+    <title>MyKanz | سياسة الخصوصية | מדיניות פרטיות</title>
     <style>
         * {
             margin: 0;
@@ -18,13 +18,18 @@
             font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'Arial', sans-serif;
             background: linear-gradient(135deg, #f5f7fa 0%, #e8edf2 100%);
             color: #1a2a3a;
-            line-height: 1.6;
+            line-height: 1.7;
             padding: 20px;
             min-height: 100vh;
         }
 
+        body, body * {
+            direction: rtl;
+            text-align: right;
+        }
+
         .container {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
@@ -34,6 +39,11 @@
             justify-content: flex-end;
             gap: 12px;
             margin-bottom: 16px;
+            direction: ltr;
+        }
+        
+        .lang-switch * {
+            direction: ltr;
         }
 
         .lang-btn {
@@ -70,9 +80,8 @@
         }
 
         .header h1 {
-            font-size: 32px;
+            font-size: 28px;
             margin-bottom: 10px;
-            letter-spacing: -0.5px;
         }
 
         .header .subtitle {
@@ -90,7 +99,6 @@
             margin-top: 12px;
         }
 
-        /* Last Updated */
         .last-updated {
             background: #FFF8E1;
             padding: 10px 20px;
@@ -101,18 +109,13 @@
             font-weight: 500;
         }
 
-        /* Policy Sections */
+        /* Sections */
         .policy-section {
             background: white;
             margin-bottom: 20px;
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .policy-section:hover {
-            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
         }
 
         .section-title {
@@ -125,7 +128,6 @@
             align-items: center;
             font-weight: 700;
             font-size: 20px;
-            transition: background 0.2s;
         }
 
         .section-title:hover {
@@ -133,7 +135,7 @@
         }
 
         .section-title .arrow {
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.3s;
             font-size: 22px;
             color: #2E7D32;
         }
@@ -146,18 +148,25 @@
             padding: 0 24px;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s;
+            transition: max-height 0.5s, padding 0.3s;
         }
 
         .policy-content.active {
-            max-height: 3000px;
+            max-height: 5000px;
             padding: 24px;
         }
 
-        /* Typography */
+        h2 {
+            color: #1B5E20;
+            font-size: 24px;
+            margin: 30px 0 15px 0;
+            border-bottom: 2px solid #2E7D32;
+            padding-bottom: 8px;
+        }
+
         h3 {
             color: #1B5E20;
-            margin: 28px 0 12px 0;
+            margin: 25px 0 12px 0;
             font-size: 20px;
             border-right: 4px solid #2E7D32;
             padding-right: 12px;
@@ -165,32 +174,58 @@
 
         h4 {
             color: #2c3e50;
-            margin: 20px 0 10px 0;
+            margin: 18px 0 8px 0;
             font-size: 17px;
             font-weight: 600;
         }
 
         p {
             margin-bottom: 14px;
-            line-height: 1.7;
         }
 
         ul, ol {
-            margin: 12px 0 18px 25px;
+            margin: 12px 25px 18px 0;
         }
 
         li {
             margin-bottom: 8px;
         }
 
-        /* Special Boxes */
+        /* Table styles */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+            direction: rtl;
+        }
+        
+        .data-table th {
+            background: #2E7D32;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #1B5E20;
+        }
+        
+        .data-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            vertical-align: top;
+            background: #fff;
+        }
+        
+        .data-table tr:nth-child(even) td {
+            background: #f9f9f9;
+        }
+
+        /* Boxes */
         .highlight-box {
             background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
             border-right: 5px solid #2E7D32;
             padding: 16px 20px;
             margin: 20px 0;
             border-radius: 12px;
-            font-weight: 500;
         }
 
         .warning-box {
@@ -209,6 +244,15 @@
             border-radius: 12px;
         }
 
+        .company-details {
+            background: #F1F8E9;
+            padding: 16px;
+            border-radius: 12px;
+            margin: 15px 0;
+            font-family: monospace;
+            font-size: 14px;
+        }
+
         .contact-box {
             background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%);
             color: white;
@@ -216,25 +260,14 @@
             border-radius: 20px;
             text-align: center;
             margin: 30px 0 20px;
-            box-shadow: 0 6px 14px rgba(0,0,0,0.15);
         }
 
         .contact-box a {
             color: #FFD54F;
             text-decoration: none;
             font-weight: bold;
-            font-size: 18px;
         }
 
-        .contact-box a:hover {
-            text-decoration: underline;
-        }
-
-        .contact-box p {
-            margin: 8px 0;
-        }
-
-        /* Footer */
         .footer {
             text-align: center;
             padding: 25px;
@@ -252,80 +285,26 @@
             border-radius: 40px;
             font-size: 14px;
             cursor: pointer;
-            transition: all 0.2s;
             margin-top: 15px;
         }
 
         .print-btn:hover {
             background: #5a6268;
-            transform: translateY(-2px);
         }
 
-        /* Hebrew Support (LTR when Hebrew is active) */
-        body.hebrew-mode {
-            direction: ltr;
-            text-align: right;
-        }
-
-        body.hebrew-mode .section-title,
-        body.hebrew-mode .policy-content,
-        body.hebrew-mode h3,
-        body.hebrew-mode p {
-            text-align: left;
-        }
-
-        body.hebrew-mode h3 {
-            border-right: none;
-            border-left: 4px solid #2E7D32;
-            padding-right: 0;
-            padding-left: 12px;
-        }
-
-        body.hebrew-mode .highlight-box,
-        body.hebrew-mode .warning-box,
-        body.hebrew-mode .info-box {
-            border-right: none;
-            border-left: 5px solid;
-        }
-
-        body.hebrew-mode .highlight-box {
-            border-left-color: #2E7D32;
-        }
-
-        body.hebrew-mode .warning-box {
-            border-left-color: #FF9800;
-        }
-
-        body.hebrew-mode .info-box {
-            border-left-color: #2196F3;
-        }
-
-        /* Responsive */
-        @media (max-width: 600px) {
-            body {
-                padding: 12px;
+        @media (max-width: 768px) {
+            .data-table {
+                font-size: 11px;
+            }
+            .data-table th, .data-table td {
+                padding: 6px;
             }
             .section-title {
-                font-size: 17px;
-                padding: 14px 18px;
-            }
-            .policy-content.active {
-                padding: 18px;
-            }
-            .header h1 {
-                font-size: 24px;
-            }
-            .lang-btn {
-                padding: 5px 14px;
-                font-size: 12px;
+                font-size: 16px;
             }
         }
 
         @media print {
-            body {
-                background: white;
-                padding: 0;
-            }
             .lang-switch, .print-btn, .section-title .arrow {
                 display: none;
             }
@@ -335,7 +314,6 @@
             }
             .section-title {
                 cursor: default;
-                background: #f0f0f0;
             }
         }
     </style>
@@ -350,161 +328,255 @@
 
         <!-- Header -->
         <div class="header">
-            <h1 id="main-title">📱 سياسات تطبيق MyKanz</h1>
-            <div class="subtitle" id="subtitle">سياسة الخصوصية | الشروط والأحكام | الإرجاع والاسترداد | التوصيل</div>
-            <div class="badge" id="protection-badge">✅ حماية بياناتك وفق القانون الإسرائيلي | אבטחת מידע לפי החוק הישראלי</div>
+            <h1 id="main-title">سياسة الخصوصية - تطبيق MyKanz</h1>
+            <div class="subtitle" id="subtitle">كيف نقوم بجمع واستخدام وحماية بياناتك</div>
+            <div class="badge" id="badge">✅ تم التوثيق وفقًا للقانون الإسرائيلي | מאושר לפי החוק הישראלי</div>
         </div>
 
         <div class="last-updated" id="last-updated">📅 آخر تحديث: 25 أبريل 2026 | עודכן לאחרונה: 25 באפריל 2026</div>
 
-        <!-- ==================== SECTION 1: PRIVACY POLICY ==================== -->
+        <!-- ==================== MAIN PRIVACY POLICY ==================== -->
         <div class="policy-section">
             <div class="section-title" onclick="toggleSection(this)">
-                <span id="privacy-title">🔒 1. سياسة الخصوصية</span>
+                <span id="privacy-main-title">🔒 سياسة خصوصية مستخدمي تطبيق MyKanz</span>
                 <span class="arrow">▼</span>
             </div>
             <div class="policy-content">
-                <p id="privacy-effective"><strong>تاريخ السريان:</strong> 25 أبريل 2026</p>
+                <p id="intro-text">توضح سياسة خصوصية المستخدمين هذه ("سياسة الخصوصية") كيف تقوم شركة MyKanz ("الشركة"، "نحن"، "لنا") بجمع واستخدام وتخزين ومشاركة البيانات الشخصية للمستخدم ("أنت") (على النحو المحدد أدناه) من:</p>
+                <ul id="user-categories">
+                    <li><strong>العملاء:</strong> الأفراد الذين يستخدمون تطبيق MyKanz لشراء المنتجات وخدمات التوصيل ("الخدمات").</li>
+                    <li><strong>زوار التطبيق:</strong> الأفراد الذين يقومون بتنزيل التطبيق أو تصفحه دون إنشاء حساب.</li>
+                </ul>
                 
-                <h3 id="privacy-info-title">١. ما هي المعلومات التي نجمعها؟</h3>
-                <ul id="privacy-list-1">
-                    <li><strong>بيانات الحساب:</strong> الاسم، اسم العائلة، رقم الهاتف، والبريد الإلكتروني (عند توفيره).</li>
-                    <li><strong>بيانات الموقع:</strong> نجمع <strong>موقعك الدقيق</strong> لعرض المتاجر المتاحة والتحقق من إمكانية التوصيل إلى منطقتك.</li>
-                    <li><strong>بيانات الجهاز:</strong> معرف الإشعارات (Token) لإرسال تحديثات الطلب.</li>
-                </ul>
+                <p id="policy-note">تعتبر سياسة الخصوصية هذه جزءًا لا يتجزأ من شروطنا وأحكامنا ("الشروط"). أي مصطلحات مكتوبة بأحرف كبيرة لم يتم تعريفها هنا يجب أن يكون لها المعنى المنسوب إليها في الشروط.</p>
+                
+                <p id="consent-note">يتم تقديم أي بيانات شخصية تقدمها بمحض إرادتك الحرة وموافقتك (حيثما تقتضي قوانين حماية البيانات المعمول بها)، وتقر بأنك لست ملزمًا قانونيًا بتزويدنا بالبيانات الشخصية. ومع ذلك، يجب علينا جمع بعض البيانات الشخصية لتقديم الخدمة، وفي حال اخترت عدم تزويدنا بهذه البيانات، فلن نتمكن من تحقيق أغراض معينة، على سبيل المثال، تقديم خدمات التوصيل - كل ذلك كما هو موضح أدناه.</p>
 
-                <h3 id="privacy-use-title">٢. كيف نستخدم بياناتك؟</h3>
-                <ul id="privacy-list-2">
-                    <li>معالجة طلبات الدفع عند الاستلام.</li>
-                    <li>إرسال <strong>إشعارات فورية</strong> حول حالة الطلب (مثل "طلبك قيد التوصيل").</li>
-                    <li>التحقق من أن عنوانك ضمن مناطق التوصيل المتاحة.</li>
-                </ul>
+                <h3 id="amendments-title">تعديلات السياسة</h3>
+                <p id="amendments-text">تحتفظ MyKanz بالحق في تعديل سياسة الخصوصية هذه من وقت لآخر، وفقًا لتقديرنا الخاص. سيتم دائمًا نشر أحدث إصدار من سياسة الخصوصية هذه على التطبيق وسيظهر في عنوان "آخر تحديث". ستصبح أي تعديلات على سياسة الخصوصية سارية المفعول على الفور. نوصيك بمراجعة سياسة الخصوصية هذه بشكل دوري.</p>
 
-                <h3 id="privacy-consent-title">٣. الموافقة على الإشعارات والموقع</h3>
-                <p id="privacy-consent-text">باستخدام MyKanz، أنت توافق على استلام الإشعارات الفورية. يمكنك إيقاف تشغيلها من إعدادات جهازك. كما توافق على مشاركة موقعك لتسهيل عملية التوصيل.</p>
-
-                <div class="highlight-box" id="privacy-highlight">
-                    <strong>⚠️ ملاحظة مهمة:</strong> لن نشارك رقم هاتفك أو عنوانك مع أي طرف ثالث لأغراض تسويقية.
+                <h3 id="controller-title">تفاصيل مراقب البيانات</h3>
+                <div class="company-details">
+                    <strong id="company-name">شركة MyKanz - كانز للتجارة والتسويق</strong><br>
+                    <span id="company-address">العنوان: [أدخل عنوان شركتك الكامل - المدينة، الشارع، الرمز البريدي]، إسرائيل</span><br>
+                    <span id="company-email">📧 <a href="mailto:privacy@mykanz.com">privacy@mykanz.com</a> | <a href="mailto:support@mykanz.com">support@mykanz.com</a></span><br>
+                    <span id="company-phone">📱 للاستفسارات: <a href="tel:+972501234567">+972-50-123-4567</a></span>
                 </div>
 
-                <h3 id="privacy-security-title">٤. أمان البيانات (وفقًا للقانون الإسرائيلي)</h3>
-                <p id="privacy-security-text">نطبق إجراءات أمان البيانات المطلوبة بموجب لوائح حماية الخصوصية الإسرائيلية (أمن البيانات)، 5777-2017 لحماية معلوماتك الشخصية. نحن ملتزمون بالامتثال לחוק הגנת הפרטיות, התשמ"א-1981.</p>
+                <h3 id="data-types-title">البيانات الشخصية التي تجمعها MyKanz</h3>
+                <p id="data-types-intro">قد نجمع نوعين من المعلومات منك، اعتمادًا على تفاعلك معنا:</p>
+                <ul id="data-types-list">
+                    <li><strong>البيانات غير الشخصية:</strong> معلومات غير قابلة للتعريف مثل نوع نظام التشغيل ونوع المتصفح ونوع الجهاز ومدة الجلسة.</li>
+                    <li><strong>البيانات الشخصية:</strong> المعلومات التي تحدد هوية فرد مثل الاسم، رقم الهاتف، العنوان، الموقع الجغرافي.</li>
+                </ul>
 
-                <h3 id="privacy-rights-title">٥. حقوقك</h3>
-                <p id="privacy-rights-text">يحق لك طلب حذف حسابك وبياناتك في أي وقت عن طريق مراسلتنا على البريد الإلكتروني أدناه. سيتم الرد على طلبك خلال 30 يومًا كحد أقصى.</p>
+                <h3 id="table-title">فئات الأفراد ونوع البيانات والأغراض</h3>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr><th id="th-category">فئة الأفراد</th><th id="th-data-type">نوع البيانات</th><th id="th-purpose">الأغراض والعمليات</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td id="row1-cat">العملاء، زوار التطبيق</td>
+                            <td id="row1-data"><strong>المعرفات عبر الإنترنت وبيانات الاستخدام:</strong> عنوان IP، معرف الجهاز، نظام التشغيل، نوع المتصفح، بيانات الأعطال، الصفحات التي تمت مشاهدتها، وقت الوصول.</td>
+                            <td id="row1-purpose">• لتشغيل التطبيق وتمكين وظائفه الصحيحة<br>• لأغراض الأمان ومنع الاحتيال<br>• لتصحيح الأخطاء وحل المشكلات الفنية<br>• لفهم كيفية استخدام الأفراد للتطبيق</td>
+                        </tr>
+                        <tr><td id="row2-cat">العملاء</td>
+                            <td id="row2-data"><strong>معلومات الاتصال وتفاصيل الحساب:</strong> الاسم الكامل، اسم العائلة، رقم الهاتف، البريد الإلكتروني، كلمة المرور، العنوان البريدي (المدينة، الشارع، رقم المنزل).</td>
+                            <td id="row2-purpose">• إنشاء الحساب وإدارته<br>• التواصل بخصوص الطلبات والتوصيل<br>• إرسال إشعارات فورية حول حالة الطلب<br>• المصادقة والتحقق من الهوية</td>
+                        </tr>
+                        <tr><td id="row3-cat">العملاء</td>
+                            <td id="row3-data"><strong>الموقع الجغرافي:</strong> موقع دقيق أو تقريبي، الموقع في الوقت الفعلي لهاتفك المحمول.</td>
+                            <td id="row3-purpose">• التحقق من إمكانية التوصيل إلى منطقتك<br>• توجيه سائق التوصيل إلى عنوانك<br>• حساب رسوم التوصيل بدقة<br>• تقدير أوقات التسليم</td>
+                        </tr>
+                        <tr><td id="row4-cat">العملاء</td>
+                            <td id="row4-data"><strong>بيانات الإشعارات:</strong> معرف جهاز推送 (Push Token)، تفضيلات الإشعارات.</td>
+                            <td id="row4-purpose">• إرسال إشعارات فورية حول حالة الطلب ("طلبك قيد التجهيز"، "الطلب قيد التوصيل"، "السائق على بعد 15 دقيقة")<br>• إشعارات الخدمة والتحديثات</td>
+                         </tr>
+                        <tr><td id="row5-cat">العملاء</td>
+                            <td id="row5-data"><strong>بيانات الطلب والدفع:</strong> المنتجات المطلوبة، الكميات، السعر الإجمالي، طريقة الدفع (نقدًا عند الاستلام).</td>
+                            <td id="row5-purpose">• معالجة الطلبات وتنسيق التوصيل<br>• إصدار الفواتير والإيصالات<br>• معالجة الإرجاع والاسترداد</td>
+                         </tr>
+                        <tr><td id="row6-cat">العملاء</td>
+                            <td id="row6-data"><strong>المراجعات والتعليقات:</strong> التقييمات، التعليقات على المنتجات أو خدمة التوصيل.</td>
+                            <td id="row6-purpose">• تحسين الخدمات<br>• استخدامها بشكل مجهول في المواد التسويقية<br>• تحسين تجربة العملاء</td>
+                         </tr>
+                    </tbody>
+                </table>
 
-                <div class="info-box" id="privacy-register-note">
-                    <strong>📌 تسجيل قاعدة البيانات:</strong> عند تجاوز 10,000 مستخدم، سيتم تسجيل قاعدة البيانات لدى רשות הגנת הפרטיות (רשות הגנת הפרטיות) לפי החוק הישראלי.
+                <h3 id="collection-title">كيف نجمع المعلومات</h3>
+                <ul id="collection-list">
+                    <li><strong>تلقائيًا:</strong> عنوان IP، نوع الجهاز، نظام التشغيل، بيانات الاستخدام.</li>
+                    <li><strong>مقدمة منك طواعية:</strong> عند إنشاء حساب، إدخال العنوان، الاتصال بالدعم.</li>
+                    <li><strong>أثناء تقديم الخدمات:</strong> الموقع الجغرافي عند طلب التوصيل، تأكيد الاستلام.</li>
+                </ul>
+
+                <h3 id="thirdparty-title">مشاركة البيانات الشخصية مع أطراف ثالثة</h3>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr><th id="th-recipient">فئة المستلم</th><th id="th-shared-data">البيانات التي ستتم مشاركتها</th><th id="th-shared-purpose">الغرض من المشاركة</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td id="rec1">سائقو التوصيل وشركاء التوصيل</td>
+                            <td id="rec1-data">الاسم، رقم الهاتف، العنوان الدقيق، الموقع الجغرافي، تفاصيل الطلب</td>
+                            <td id="rec1-purpose">توصيل الطلب إلى عنوانك، الاتصال بك عند الحاجة</td>
+                         </tr>
+                        <tr><td id="rec2">مزودو خدمات التحليلات (مثل Firebase, Google Analytics)</td>
+                            <td id="rec2-data">بيانات الاستخدام، عنوان IP، معرف الجهاز، الأعطال</td>
+                            <td id="rec2-purpose">تحليل أداء التطبيق، تحسين تجربة المستخدم، إصلاح المشكلات التقنية</td>
+                         </tr>
+                        <tr><td id="rec3">مزود خدمة الإشعارات (Firebase Cloud Messaging)</td>
+                            <td id="rec3-data">معرف جهاز推送 (Push Token)</td>
+                            <td id="rec3-purpose">إرسال إشعارات فورية حول حالة الطلب</td>
+                         </tr>
+                        <tr><td id="rec4">السلطات القانونية والمنظمون</td>
+                            <td id="rec4-data">جميع أنواع البيانات حسب الضرورة</td>
+                            <td id="rec4-purpose">الامتثال للقوانين، الأوامر القضائية، التحقيقات، منع الاحتيال</td>
+                         </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box" id="sharing-note">
+                    <strong>⚠️ ملاحظة مهمة:</strong> لا نقوم ببيع بياناتك الشخصية لأي طرف ثالث. لا نشارك رقم هاتفك أو عنوانك لأغراض تسويقية دون موافقة منفصلة ومسبقة منك.
+                </div>
+
+                <h3 id="security-title">أمن البيانات</h3>
+                <p id="security-text">اتخذت MyKanz تدابير فنية وتنظيمية مناسبة للحفاظ على بياناتك آمنة ومأمونة من أجل منع الفقدان أو سوء الاستخدام أو الوصول غير المصرح به أو الكشف أو التغيير أو الإتلاف، وفقًا للوائح حماية الخصوصية الإسرائيلية (أمن البيانات)، 5777-2017. تشمل تدابيرنا: تشفير البيانات أثناء النقل، تقييد الوصول إلى الموظفين المصرح لهم فقط، ومراجعة إجراءات الأمان بشكل دوري.</p>
+                <p id="breach-text">يرجى الاتصال بنا على: <strong>privacy@mykanz.com</strong> إذا شعرت أن خصوصيتك لم يتم التعامل معها بشكل صحيح، أو إذا علمت بمحاولة وصول غير مصرح به إلى بياناتك. سنقوم بإخطارك والسلطات المختصة في حالة اكتشاف خرق أمني يخص بياناتك الشخصية.</p>
+
+                <h3 id="transfer-title">عمليات نقل البيانات الدولية</h3>
+                <p id="transfer-text">قد يتم نقل بياناتك الشخصية ومعالجتها وتخزينها خارج إسرائيل (مثل خوادم Google Cloud أو AWS). قد تختلف قوانين حماية البيانات في تلك الولايات القضائية. في جميع الحالات، نتخذ التدابير المناسبة لضمان مستوى كافٍ من حماية البيانات. أنت توافق بموجب هذا على هذا النقل والمعالجة والتخزين لبياناتك خارج إسرائيل.</p>
+
+                <h3 id="retention-title">الاحتفاظ بالبيانات</h3>
+                <ul id="retention-list">
+                    <li><strong>بيانات الحساب:</strong> نحتفظ بها طالما حسابك نشط. عند طلب حذف الحساب، نحذف البيانات خلال 30 يومًا.</li>
+                    <li><strong>سجل الطلبات:</strong> نحتفظ به لمدة 7 سنوات لأسباب ضريبية ومحاسبية وفقًا للقانون الإسرائيلي.</li>
+                    <li><strong>بيانات الموقع:</strong> نحذفها بعد 30 يومًا من اكتمال الطلب.</li>
+                    <li><strong>سجل الدعم والمحادثات:</strong> نحتفظ به لمدة سنة لحل النزاعات وتحسين الخدمة.</li>
+                    <li><strong>بيانات الاستخدام:</strong> نحتفظ بها لمدة 12 شهرًا لأغراض تحليلية وتحسين التطبيق.</li>
+                </ul>
+
+                <h3 id="rights-title">حقوق الخصوصية - وفقًا لقانون الخصوصية الإسرائيلي 1981</h3>
+                <p id="rights-intro">مع مراعاة أحكام قانون حماية الخصوصية الإسرائيلي لعام 1981 واللوائح ذات الصلة، لديك الحق في:</p>
+                <ul id="rights-list">
+                    <li><strong>حق الاطلاع:</strong> مراجعة البيانات الشخصية المحفوظة عنك في قواعد بياناتنا.</li>
+                    <li><strong>حق التصحيح:</strong> طلب تعديل البيانات غير الصحيحة أو غير الكاملة أو القديمة.</li>
+                    <li><strong>حق الحذف:</strong> طلب حذف حسابك وبياناتك (مع مراعاة الالتزامات القانونية مثل حفظ سجلات الطلبات لمدة 7 سنوات).</li>
+                    <li><strong>حق تقديم شكوى:</strong> التوجه إلى רשות הגנת הפרטיות (سلطة الخصوصية الإسرائيلية).</li>
+                </ul>
+                <p id="rights-request">لتقديم طلب بخصوص حقوقك، راسلنا على: <strong>privacy@mykanz.com</strong> وسنرد على طلبك خلال 30 يومًا وفقًا للجداول الزمنية المنصوص عليها في القانون.</p>
+
+                <div class="info-box" id="database-register">
+                    <strong>📌 تسجيل قاعدة البيانات:</strong> عند تجاوز عدد مستخدمينا 10,000 مستخدم، سنقوم بتسجيل قاعدة البيانات لدى רשות הגנת הפרטיות (سلطة الخصوصية الإسرائيلية) وفقًا للقانون.
+                </div>
+
+                <h3 id="children-title">بيانات الأطفال</h3>
+                <p id="children-text">خدماتنا ليست مخصصة للأطفال دون سن 18 عامًا. نحن لا نجمع عن علم معلومات عن الأطفال. إذا كان عمرك أقل من 18 عامًا، لا يجوز لك استخدام الخدمة إلا بموافقة الوالدين وفقًا للقانون.</p>
+
+                <div class="warning-box" id="legal-note">
+                    <strong>تنويه قانوني:</strong> هذه السياسة تخضع للقوانين الإسرائيلية. في حال وجود أي تعارض بين النسخة العربية والنسخة العبرية، تسود النسخة العبرية للامتثال القانوني داخل إسرائيل.
                 </div>
             </div>
         </div>
 
-        <!-- ==================== SECTION 2: TERMS & CONDITIONS ==================== -->
+        <!-- Terms & Conditions Summary -->
         <div class="policy-section">
             <div class="section-title" onclick="toggleSection(this)">
-                <span id="terms-title">📜 2. الشروط والأحكام</span>
+                <span id="terms-title">📜 الشروط والأحكام - תנאי שימוש</span>
                 <span class="arrow">▼</span>
             </div>
             <div class="policy-content">
-                <h3 id="terms-accept-title">١. الموافقة على الشروط</h3>
-                <p id="terms-accept-text">باستخدام تطبيق MyKanz، فإنك توافق على هذه الشروط. إذا كنت لا توافق، يرجى عدم استخدام التطبيق. تشكل هذه الشروط اتفاقية ملزمة بينك وبين MyKanz.</p>
+                <h3 id="terms-accept">١. الموافقة على الشروط</h3>
+                <p id="terms-accept-text">باستخدام تطبيق MyKanz، فإنك توافق على هذه الشروط. إذا كنت لا توافق، يرجى عدم استخدام التطبيق.</p>
 
-                <h3 id="terms-eligibility-title">٢. الأهلية</h3>
-                <p id="terms-eligibility-text">يجب أن يكون عمرك 18 سنة أو أكثر لاستخدام MyKanz. بتقديم طلب، أنت تؤكد أنك تقيم في إحدى مدن التوصيل لدينا وأن جميع المعلومات المقدمة صحيحة وكاملة.</p>
+                <h3 id="terms-eligibility">٢. الأهلية</h3>
+                <p id="terms-eligibility-text">يجب أن يكون عمرك 18 سنة أو أكثر. بتقديم طلب، أنت تؤكد أنك تقيم في إحدى مدن التوصيل لدينا.</p>
 
-                <h3 id="terms-cod-title">٣. الدفع عند الاستلام (COD)</h3>
+                <h3 id="terms-cod">٣. الدفع عند الاستلام (COD)</h3>
                 <ul id="terms-cod-list">
-                    <li>يتم الدفع <strong>نقداً</strong> مباشرة لموصل الطلب عند استلام البضاعة.</li>
-                    <li>لا تعطي نقوداً لأي شخص ليس موصلاً رسمياً لـ MyKanz ببطاقة تعريف صالحة.</li>
-                    <li>يجب أن يكون المبلغ المدفوع مطابقاً تماماً للمبلغ الموضح في التطبيق.</li>
+                    <li>يتم الدفع نقدًا مباشرة لموصل الطلب عند استلام البضاعة.</li>
+                    <li>لا تعطي نقودًا لأي شخص ليس موصلًا رسميًا لـ MyKanz.</li>
+                    <li>يجب أن يكون المبلغ مطابقًا للمبلغ الموضح في التطبيق.</li>
                 </ul>
 
-                <h3 id="terms-conduct-title">٤. سلوك المستخدم</h3>
-                <p id="terms-conduct-text">توافق على عدم استخدام التطبيق لأي نشاط احتيالي أو مضايقة سائقي التوصيل. أي انتهاك قد يؤدي إلى تعليق حسابك بشكل دائم.</p>
+                <h3 id="terms-conduct">٤. سلوك المستخدم</h3>
+                <p id="terms-conduct-text">توافق على عدم استخدام التطبيق لأي نشاط احتيالي أو مضايقة سائقي التوصيل.</p>
 
-                <h3 id="terms-liability-title">٥. تحديد المسؤولية</h3>
-                <p id="terms-liability-text">MyKanz غير مسؤول عن التأخير الناجم عن الطقس، الأحوال الأمنية، الإضرابات، أو الازدحام المروري داخل إسرائيل. يتم استخدام التطبيق "كما هو" وعلى مسؤوليتك الخاصة.</p>
+                <h3 id="terms-liability">٥. تحديد المسؤولية</h3>
+                <p id="terms-liability-text">MyKanz غير مسؤول عن التأخير الناجم عن الطقس، الأحوال الأمنية، الإضرابات، أو الازدحام المروري داخل إسرائيل.</p>
 
                 <div class="warning-box" id="terms-warning">
-                    <strong>⚠️ تحذير:</strong> أي محاولة للاحتيال أو إساءة استخدام التطبيق سيتم الإبلاغ عنها للسلطات الإسرائيلية المختصة.
+                    <strong>⚠️ تحذير:</strong> أي محاولة احتيال أو إساءة استخدام سيتم الإبلاغ عنها للسلطات الإسرائيلية.
                 </div>
             </div>
         </div>
 
-        <!-- ==================== SECTION 3: REFUND POLICY ==================== -->
+        <!-- Refund Policy -->
         <div class="policy-section">
             <div class="section-title" onclick="toggleSection(this)">
-                <span id="refund-title">💰 3. سياسة الإرجاع والاسترداد</span>
+                <span id="refund-title">💰 سياسة الإرجاع والاسترداد - מדיניות החזרים</span>
                 <span class="arrow">▼</span>
             </div>
             <div class="policy-content">
-                <h3 id="refund-damaged-title">١. المنتجات التالفة أو الخاطئة</h3>
-                <p id="refund-damaged-text">نظراً لأنك تدفع نقداً عند الاستلام، <strong>افحص المنتج قبل تسليم النقود.</strong> إذا كان المنتج تالفاً أو خاطئاً:</p>
+                <h3 id="refund-damaged">١. المنتجات التالفة أو الخاطئة</h3>
+                <p id="refund-damaged-text">نظرًا لأنك تدفع نقدًا عند الاستلام، <strong>افحص المنتج قبل تسليم النقود.</strong></p>
                 <ul id="refund-damaged-list">
-                    <li><strong>حق الرفض:</strong> يحق لك رفض الاستلام عند الباب. لن يتم تحصيل أي مبلغ منك.</li>
-                    <li><strong>الإرجاع بعد القبول:</strong> إذا لاحظت عيباً بعد قبول المنتج، يجب الاتصال بنا خلال <strong>48 ساعة</strong> من التوصيل.</li>
+                    <li><strong>حق الرفض:</strong> يحق لك رفض الاستلام عند الباب. لن يتم تحصيل أي مبلغ.</li>
+                    <li><strong>الإرجاع بعد القبول:</strong> إذا لاحظت عيبًا، اتصل بنا خلال 48 ساعة.</li>
                 </ul>
 
-                <h3 id="refund-cancel-title">٢. حق الإلغاء (وفقًا لقانون حماية المستهلك الإسرائيلي)</h3>
-                <p id="refund-cancel-text">بموجب قانون حماية المستهلك الإسرائيلي، لديك 14 يوماً لإلغاء الصفقة، مع مراعاة الاستثناءات أدناه. بما أننا نستخدم الدفع عند الاستلام:</p>
+                <h3 id="refund-cancel">٢. حق الإلغاء (قانون حماية المستهلك الإسرائيلي)</h3>
+                <p id="refund-cancel-text">بموجب القانون، لديك 14 يومًا لإلغاء الصفقة. سيتم إصدار المبالغ المستردة كرصيد في MyKanz أو تحويل بنكي خلال 14 يومًا.</p>
                 <ul id="refund-cancel-list">
-                    <li>سيتم إصدار المبالغ المستردة كـ <strong>رصيد في محفظة MyKanz</strong> أو تحويل بنكي (في غضون 14 يوماً).</li>
-                    <li><strong>الاستثناءات:</strong> لا يمكن إرجاع المواد القابلة للتلف، المنتجات الحميمة، أو المنتجات المصنوعة خصيصاً حسب الطلب.</li>
-                    <li><strong>رسوم الإلغاء:</strong> قد يتم خصم 5% أو 100 شيكل (أيهما أقل) كرسوم معالجة.</li>
+                    <li><strong>الاستثناءات:</strong> لا يمكن إرجاع المنتجات القابلة للتلف، المنتجات الحميمة، أو المنتجات المصنوعة حسب الطلب.</li>
+                    <li><strong>رسوم الإلغاء:</strong> قد يتم خصم 5% أو 100 شيكل (أيهما أقل).</li>
                 </ul>
 
-                <h3 id="refund-how-title">٣. كيفية الإرجاع</h3>
+                <h3 id="refund-how">٣. كيفية الإرجاع</h3>
                 <ol id="refund-how-list">
-                    <li>اتصل بالدعم عبر دردشة التطبيق أو البريد الإلكتروني.</li>
-                    <li>احتفظ بالمنتج مغلقاً/غير مستخدم وفي عبواته الأصلية.</li>
-                    <li>سنقوم بترتيب استلامه من عنوانك خلال 3-5 أيام عمل.</li>
-                    <li>بعد الفحص، سيتم إصدار المبلغ المسترد خلال 14 يوماً.</li>
+                    <li>اتصل بالدعم عبر التطبيق أو البريد الإلكتروني.</li>
+                    <li>احتفظ بالمنتج في عبواته الأصلية.</li>
+                    <li>سنقوم بترتيب الاستلام خلال 3-5 أيام.</li>
                 </ol>
-
-                <div class="highlight-box" id="refund-note">
-                    <strong>📌 ملاحظة مهمة:</strong> نظرًا لسياسة الدفع عند الاستلام، لا توجد استردادات رقمية. جميع المبالغ المستردة تكون نقدية (تحويل بنكي) أو رصيد في التطبيق.
-                </div>
             </div>
         </div>
 
-        <!-- ==================== SECTION 4: SHIPPING POLICY ==================== -->
+        <!-- Shipping Policy -->
         <div class="policy-section">
             <div class="section-title" onclick="toggleSection(this)">
-                <span id="shipping-title">🚚 4. سياسة التوصيل والشحن</span>
+                <span id="shipping-title">🚚 سياسة التوصيل - מדיניות משלוחים</span>
                 <span class="arrow">▼</span>
             </div>
             <div class="policy-content">
-                <h3 id="shipping-zones-title">١. مناطق التوصيل</h3>
-                <p id="shipping-zones-text">نقوم حالياً بالتوصيل فقط إلى المدن المحددة والمذكورة في التطبيق. <strong>لا نقوم بالتوصيل إلى المناطق غير المصرح بها.</strong> المدن المتاحة حالياً: الناصرة، حيفا، يافا، الرملة، اللد، أم الفحم، طيرة، طيبة، قلنسوة، كفر قاسم، والمزيد (يتم تحديث القائمة باستمرار).</p>
+                <h3 id="shipping-zones">١. مناطق التوصيل</h3>
+                <p id="shipping-zones-text">نقوم بالتوصيل إلى المدن المحددة في التطبيق. <strong>لا نقوم بالتوصيل إلى المناطق غير المصرح بها.</strong> المدن المتاحة: الناصرة، حيفا، يافا، الرملة، اللد، أم الفحم، طيرة، طيبة، قلنسوة، كفر قاسم، والمزيد.</p>
 
-                <h3 id="shipping-time-title">٢. مدة التوصيل</h3>
+                <h3 id="shipping-time">٢. مدة التوصيل</h3>
                 <ul id="shipping-time-list">
-                    <li><strong>وقت المعالجة:</strong> 1-2 أيام عمل (من الأحد إلى الخميس).</li>
-                    <li><strong>الشحن:</strong> 2-7 أيام عمل حسب مدينتك.</li>
-                    <li><strong>الإشعارات:</strong> ستتلقى إشعاراً فورياً عندما يكون السائق على بعد 15 دقيقة.</li>
+                    <li><strong>وقت المعالجة:</strong> 1-2 أيام عمل (الأحد إلى الخميس).</li>
+                    <li><strong>الشحن:</strong> 2-7 أيام عمل حسب المدينة.</li>
+                    <li><strong>الإشعارات:</strong> ستتلقى إشعارًا عندما يكون السائق على بعد 15 دقيقة.</li>
                 </ul>
 
-                <h3 id="shipping-failed-title">٣. محاولات التوصيل الفاشلة</h3>
+                <h3 id="shipping-failed">٣. محاولات التوصيل الفاشلة</h3>
                 <ul id="shipping-failed-list">
-                    <li>إذا لم تكن في المنزل لاستلام الطلب ودفع النقود، سيحاول السائق الاتصال بك مرة واحدة.</li>
-                    <li>إذا فشلت المحاولة الثانية، سيتم إلغاء الطلب وقد يتم تحصيل رسوم خدمة (20 شيكل) من حسابك مقابل تكاليف الخدمات اللوجستية المهدرة.</li>
-                    <li>بعد محاولتين فاشلتين، سيتم وضع علامة على عنوانك كـ "عنوان صعب التوصيل".</li>
+                    <li>إذا لم تكن في المنزل، سيحاول السائق الاتصال بك مرة واحدة.</li>
+                    <li>إذا فشلت المحاولة الثانية، سيتم إلغاء الطلب وقد يتم تحصيل 20 شيكل رسوم خدمة.</li>
                 </ul>
 
-                <h3 id="shipping-fees-title">٤. رسوم التوصيل</h3>
-                <p id="shipping-fees-text">يتم حساب رسوم التوصيل بناءً على موقعك الدقيق وتظهر في سلة التسوق قبل الدفع. تتراوح الرسوم بين 15-35 شيكل حسب المسافة. الطلبات التي تزيد عن 200 شيكل تحصل على توصيل مجاني (في بعض المدن).</p>
-
-                <div class="info-box" id="shipping-note">
-                    <strong>✅ نصائح مهمة:</strong> تأكد من أن رقم هاتفك صحيح لتلقي تحديثات الطلب عبر الإشعارات والرسائل النصية. تأكد من وجود شخص لاستلام الطلب في العنوان المحدد.
-                </div>
+                <h3 id="shipping-fees">٤. رسوم التوصيل</h3>
+                <p id="shipping-fees-text">تتراوح بين 15-35 شيكل حسب المسافة. الطلبات فوق 200 شيكل تحصل على توصيل مجاني (في بعض المدن).</p>
             </div>
         </div>
 
         <!-- Contact Box -->
-        <div class="contact-box" id="contact-box">
+        <div class="contact-box">
             <strong>📞 للاستفسارات أو الإبلاغ عن مشكلة | לשאלות או דיווח על בעיה</strong><br>
-            <p>📧 البريد الإلكتروني: <a href="mailto:support@mykanz.com">support@mykanz.com</a></p>
+            <p>📧 <strong>privacy@mykanz.com</strong> - للاستفسارات المتعلقة بالخصوصية</p>
+            <p>📧 <strong>support@mykanz.com</strong> - لدعم العملاء</p>
             <p>📱 واتساب / هاتف: <a href="tel:+972501234567">+972-50-123-4567</a></p>
+            <p>📍 العنوان: [أدخل عنوان شركتك الكامل]، إسرائيل</p>
             <p>🕒 ساعات العمل: الأحد - الخميس 09:00 - 18:00 | יום א'-ה' 09:00-18:00</p>
             <p style="font-size: 13px; margin-top: 10px;">سنرد عليك خلال 24 ساعة عمل | נשיב תוך 24 שעות עסקיות</p>
         </div>
@@ -518,7 +590,7 @@
     </div>
 
     <script>
-        // Toggle sections (collapsible)
+        // Toggle sections
         function toggleSection(element) {
             element.classList.toggle('active');
             const content = element.nextElementSibling;
@@ -535,169 +607,292 @@
             }
         });
 
-        // ==================== HEBREW TRANSLATIONS ====================
+        // ==================== COMPLETE HEBREW TRANSLATION (RTL) ====================
         const hebrewContent = {
-            main_title: "📱 מדיניות אפליקציית MyKanz",
-            subtitle: "מדיניות פרטיות | תנאי שימוש | החזרים והחלפות | משלוחים",
-            protection_badge: "✅ הגנת מידע לפי החוק הישראלי | حماية بياناتك وفق القانون الإسرائيلي",
+            // Header
+            main_title: "מדיניות פרטיות - אפליקציית MyKanz",
+            subtitle: "כיצד אנו אוספים, משתמשים ומגנים על הנתונים שלך",
+            badge: "✅ מאושר לפי החוק הישראלי | تم التوثيق وفقًا للقانون الإسرائيلي",
             last_updated: "📅 עודכן לאחרונה: 25 באפריל 2026 | آخر تحديث: 25 أبريل 2026",
             
-            // Privacy Section
-            privacy_title: "🔒 1. מדיניות פרטיות",
-            privacy_effective: "<strong>תאריך כניסה לתוקף:</strong> 25 באפריל 2026",
-            privacy_info_title: "١. איזה מידע אנחנו אוספים?",
-            privacy_list_1: '<li><strong>פרטי חשבון:</strong> שם, שם משפחה, מספר טלפון, כתובת אימייל (כאשר מסופק).</li><li><strong>נתוני מיקום:</strong> אנו אוספים את <strong>המיקום המדויק שלך</strong> כדי להציג חנויות זמינות ולוודא אפשרות משלוח לאזורך.</li><li><strong>פרטי מכשיר:</strong> מזהה התראות (Token) לשליחת עדכוני הזמנה.</li>',
-            privacy_use_title: "٢. כיצד אנו משתמשים בנתונים שלך?",
-            privacy_list_2: '<li>עיבוד הזמנות בתשלום במזומן עם המשלוח.</li><li>שליחת <strong>התראות Push</strong> לגבי סטטוס ההזמנה (לדוגמה: "ההזמנה שלך בדרך").</li><li>בדיקה שכתובתך נמצאת באזורי המשלוח שלנו.</li>',
-            privacy_consent_title: "٣. הסכמה להתראות ומיקום",
-            privacy_consent_text: "בשימוש ב-MyKanz, אתה מסכים לקבלת התראות Push. ניתן לכבות אותן בהגדרות המכשיר שלך. כמו כן, אתה מסכים לשתף את מיקומך כדי לאפשר את תהליך המשלוח.",
-            privacy_highlight: "<strong>⚠️ הערה חשובה:</strong> לא נשתף את מספר הטלפון או הכתובת שלך עם צד שלישי למטרות שיווקיות.",
-            privacy_security_title: "٤. אבטחת מידע (לפי החוק הישראלי)",
-            privacy_security_text: "אנו מיישמים אמצעי אבטחת מידע הנדרשים לפי תקנות הגנת הפרטיות (אבטחת מידע), התשע\"ז-2017 להגנה על פרטיותך. אנו מחויבים לחוק הגנת הפרטיות, התשמ\"א-1981.",
-            privacy_rights_title: "٥. זכויותיך",
-            privacy_rights_text: "יש לך זכות לבקש מחיקת חשבונך ונתוניך בכל עת באמצעות יצירת קשר במייל שלהלן. בקשתך תטופל תוך 30 יום לכל היותר.",
-            privacy_register_note: "<strong>📌 רישום מאגר מידע:</strong> במעבר ל-10,000 משתמשים, מאגר הנתונים יירשם אצל רשות הגנת הפרטיות לפי החוק הישראלי.",
+            // Privacy Main
+            privacy_main_title: "🔒 מדיניות פרטיות משתמשי אפליקציית MyKanz",
+            intro_text: "מדיניות פרטיות המשתמשים הזו ('מדיניות הפרטיות') מסבירה כיצד חברת MyKanz ('החברה', 'אנחנו', 'שלנו') אוספת, משתמשת, מאחסנת ומשתפת נתונים אישיים של המשתמש ('אתה') מ:",
+            user_categories: '<li><strong>לקוחות:</strong> אנשים המשתמשים באפליקציית MyKanz לרכישת מוצרים ושירותי משלוח ("השירותים").</li><li><strong>מבקרים באפליקציה:</strong> אנשים המורידים או צופים באפליקציה ללא יצירת חשבון.</li>',
+            policy_note: "מדיניות פרטיות זו היא חלק בלתי נפרד מהתנאים וההגבלות שלנו ('התנאים'). למונחים באותיות גדולות שלא הוגדרו כאן תהיה המשמעות המיוחסת להם בתנאים.",
+            consent_note: "כל מידע אישי שתספק ניתן מרצונך החופשי והסכמתך (כאשר נדרש על פי חוקי הגנת המידע החלים), אתה מאשר שאינך מחויב על פי חוק לספק לנו מידע אישי. עם זאת, עלינו לאסוף או לקבל מידע אישי מסוים כדי לספק את השירות, ואם תבחר לא לספק מידע אישי זה, לא נוכל להשיג מטרות מסוימות, למשל, מתן שירותי משלוח - כפי שיפורט להלן.",
             
-            // Terms Section
-            terms_title: "📜 2. תנאי שימוש",
-            terms_accept_title: "١. הסכמה לתנאים",
-            terms_accept_text: "בשימוש באפליקציית MyKanz, אתה מסכים לתנאים אלה. אם אינך מסכים, אנא אל תשתמש באפליקציה. תנאים אלה מהווים הסכם מחייב בינך לבין MyKanz.",
-            terms_eligibility_title: "٢. כשירות",
-            terms_eligibility_text: "עליך להיות בן 18 ומעלה כדי להשתמש ב-MyKanz. בהגשת הזמנה, אתה מאשר שאתה מתגורר באחת מערי המשלוח שלנו וכל הפרטים שנמסרו נכונים ומלאים.",
-            terms_cod_title: "٣. תשלום במזומן עם המשלוח (COD)",
-            terms_cod_list: '<li>התשלום הוא <strong>במזומן</strong> ישירות לשליח בעת קבלת המוצר.</li><li>אל תיתן כסף למי שאינו שליח רשמי של MyKanz עם תעודת זיהוי תקפה.</li><li>הסכום ששולם חייב להתאים בדיוק לסכום המוצג באפליקציה.</li>',
-            terms_conduct_title: "٤. התנהגות המשתמש",
-            terms_conduct_text: "אתה מסכים לא להשתמש באפליקציה לפעילות הונאה או להטרדת נהגי משלוח. כל הפרה עלולה להוביל להשעיית חשבונך לצמיתות.",
-            terms_liability_title: "٥. הגבלת אחריות",
-            terms_liability_text: "MyKanz אינה אחראית לעיכובים הנגרמים בשל מזג אוויר, מצבי ביטחון, שביתות או עומסי תנועה בישראל. השימוש באפליקציה נעשה 'כמות שהיא' ועל אחריותך בלבד.",
-            terms_warning: "<strong>⚠️ אזהרה:</strong> כל ניסיון להונאה או שימוש לרעה באפליקציה ידווח לרשויות המתאימות בישראל.",
+            amendments_title: "תיקוני המדיניות",
+            amendments_text: "MyKanz שומרת לעצמה את הזכות לשנות מדיניות פרטיות זו מעת לעת, לפי שיקול דעתנו. הגרסה העדכנית ביותר של מדיניות פרטיות זו תפורסם תמיד באפליקציה ותופיע בכותרת 'עודכן לאחרונה'. כל שינוי במדיניות הפרטיות ייכנס לתוקף באופן מיידי. אנו ממליצים לך לעיין במדיניות פרטיות זו מעת לעת.",
             
-            // Refund Section
-            refund_title: "💰 3. מדיניות החזרים והחלפות",
-            refund_damaged_title: "١. מוצרים פגומים או שגויים",
-            refund_damaged_text: "מכיוון שאתה משלם במזומן עם המשלוח, <strong>בדוק את המוצר לפני מסירת הכסף.</strong> אם המוצר פגום או שגוי:",
-            refund_damaged_list: '<li><strong>זכות סירוב:</strong> אתה רשאי לסרב לקבל את המוצר בדלת. לא תחויב בכל סכום.</li><li><strong>החזרה לאחר קבלה:</strong> אם תבחין בפגם לאחר קבלת המוצר, עליך ליצור איתנו קשר תוך <strong>48 שעות</strong> מהמשלוח.</li>',
-            refund_cancel_title: "٢. זכות ביטול (לפי חוק הגנת הצרכן הישראלי)",
-            refund_cancel_text: "על פי חוק הגנת הצרכן הישראלי, יש לך 14 ימים לבטל את העסקה, בכפוף לחריגים להלן. מכיוון שאנו משתמשים בתשלום במזומן עם המשלוח:",
-            refund_cancel_list: '<li>ההחזרים יינתנו כ<strong>יתרת ארנק MyKanz</strong> או העברה בנקאית (תוך 14 יום).</li><li><strong>חריגים:</strong> לא ניתן להחזיר מוצרים מתכלים, מוצרים אינטימיים, או מוצרים שיוצרו במיוחד לפי הזמנה.</li><li><strong>דמי ביטול:</strong> עשויים להינכות 5% או 100 ש"ח (הנמוך מבניהם) כדמי טיפול.</li>',
-            refund_how_title: "٣. כיצד להחזיר",
-            refund_how_list: '<li>צור קשר עם התמ"ד דרך צ\'אט האפליקציה או אימייל.</li><li>שמור את המוצר סגור/לא בשימוש באריזותיו המקוריות.</li><li>נסדר איסוף מכתובתך תוך 3-5 ימי עסקים.</li><li>לאחר הבדיקה, יינתן ההחזר תוך 14 יום.</li>',
-            refund_note: "<strong>📌 הערה חשובה:</strong> לאור מדיניות התשלום במזומן עם המשלוח, אין החזרים דיגיטליים. כל ההחזרים הם במזומן (העברה בנקאית) או יתרה באפליקציה.",
+            controller_title: "פרטי מפקח הנתונים",
+            company_name: "חברת MyKanz - כנז למסחר ושיווק",
+            company_address: "כתובת: [הכנס כתובת מלאה של החברה - עיר, רחוב, מיקוד], ישראל",
+            company_email: "📧 support@mykanz.com | privacy@mykanz.com",
+            company_phone: "📱 לפניות: 050-123-4567",
             
-            // Shipping Section
-            shipping_title: "🚚 4. מדיניות משלוחים",
-            shipping_zones_title: "١. אזורי משלוח",
-            shipping_zones_text: "אנו מספקים שירות משלוחים כרגע רק לערים המפורטות באפליקציה. <strong>איננו מספקים שירות לאזורים לא מורשים.</strong> ערים זמינות כיום: נצרת, חיפה, יפו, רמלה, לוד, אום אל-פחם, טירה, טייבה, קלנסווה, כפר קאסם ועוד (הרשימה מתעדכנת באופן שוטף).",
-            shipping_time_title: "٢. זמן משלוח",
-            shipping_time_list: '<li><strong>זמן טיפול:</strong> 1-2 ימי עסקים (ראשון עד חמישי).</li><li><strong>שילוח:</strong> 2-7 ימי עסקים לפי העיר שלך.</li><li><strong>התראות:</strong> תקבל התראה natid כאשר הנהג במרחק 15 דקות.</li>',
-            shipping_failed_title: "٣. ניסיונות משלוח כושלים",
-            shipping_failed_list: '<li>אם לא היית בבית לקבל את ההזמנה ולשלם במזומן, הנהג ינסה ליצור איתך קשר פעם אחת.</li><li>אם הניסיון השני נכשל, ההזמנה תבוטל ועשוי להיגרם חיוב שירות (20 ש"ח) מחשבונך בשל עלויות לוגיסטיות מבוזבזות.</li><li>לאחר שני ניסיונות כושלים, כתובתך תסומן כ"כתובת קשה למשלוח".</li>',
-            shipping_fees_title: "٤. דמי משלוח",
-            shipping_fees_text: "דמי המשלוח מחושבים לפי מיקומך המדויק ומוצגים בעגלה לפני התשלום. דמי המשלוח נעים בין 15-35 ש\"ח לפי מרחק. הזמנות מעל 200 ש\"ח זוכות למשלוח חינם (בערים מסוימות).",
-            shipping_note: "<strong>✅ טיפים חשובים:</strong> ודא שמספר הטלפון שלך נכון כדי לקבל עדכוני הזמנה באמצעות התראות והודעות. ודא שיש מישהו בכתובת לקבלת ההזמנה.",
+            data_types_title: "מידע אישי ש-MyKanz אוספת",
+            data_types_intro: "אנו עשויים לאסוף שני סוגי מידע ממך, בהתאם לאינטראקציה שלך איתנו:",
+            data_types_list: '<li><strong>מידע לא אישי:</strong> מידע שאינו מזהה כמו סוג מערכת ההפעלה, סוג הדפדפן, סוג המכשיר, משך הסשן.</li><li><strong>מידע אישי:</strong> מידע המזהה אדם כגון שם, מספר טלפון, כתובת, מיקום גיאוגרפי.</li>',
             
-            // Contact Box
-            contact_title: "📞 לשאלות או דיווח על בעיה | للاستفسارات أو الإبلاغ عن مشكلة",
-            contact_week: "🕒 שעות פעילות: ראשון-חמישי 09:00-18:00 | الأحد - الخميس 09:00 - 18:00",
-            contact_response: "נשיב תוך 24 שעות עסקיות | سنرد عليك خلال 24 ساعة عمل"
+            table_title: "קטגוריות של יחידים, סוג מידע ומטרות",
+            th_category: "קטגוריית היחידים",
+            th_data_type: "סוג המידע",
+            th_purpose: "מטרות ותהליכים",
+            
+            // Row 1
+            row1_cat: "לקוחות, מבקרים באפליקציה",
+            row1_data: "<strong>מזהים מקוונים ונתוני שימוש:</strong> כתובת IP, מזהה מכשיר, מערכת הפעלה, סוג דפדפן, נתוני קריסה, דפים שנצפו, זמן גישה.",
+            row1_purpose: "• להפעלת האפליקציה ומתן אפשרות לתפקודה התקין<br>• למטרות אבטחה ומניעת הונאה<br>• לתיקון באגים ופתרון בעיות טכניות<br>• להבנה כיצד משתמשים משתמשים באפליקציה",
+            
+            // Row 2
+            row2_cat: "לקוחות",
+            row2_data: "<strong>פרטי התקשרות ופרטי חשבון:</strong> שם מלא, שם משפחה, מספר טלפון, כתובת אימייל, סיסמה, כתובת (עיר, רחוב, מספר בית).",
+            row2_purpose: "• יצירה וניהול חשבון<br>• תקשורת לגבי הזמנות ומשלוח<br>• שליחת התראות Push לגבי סטטוס ההזמנה<br>• אימות וזיהוי זהות",
+            
+            // Row 3
+            row3_cat: "לקוחות",
+            row3_data: "<strong>מיקום גיאוגרפי:</strong> מיקום מדויק או משוער, מיקום בזמן אמת של הטלפון הנייד שלך.",
+            row3_purpose: "• בדיקת אפשרות משלוח לאזורך<br>• הכוונת נהג המשלוח לכתובתך<br>• חישוב מדויק של דמי משלוח<br>• הערכת זמני אספקה",
+            
+            // Row 4
+            row4_cat: "לקוחות",
+            row4_data: "<strong>נתוני התראות:</strong> מזהה דחיפה (Push Token), העדפות התראות.",
+            row4_purpose: "• שליחת התראות Push לגבי סטטוס ההזמנה ('ההזמנה שלך בטיפול', 'ההזמנה בדרך', 'הנהג במרחק 15 דקות')<br>• התראות שירות ועדכונים",
+            
+            // Row 5
+            row5_cat: "לקוחות",
+            row5_data: "<strong>נתוני הזמנה ותשלום:</strong> מוצרים שהוזמנו, כמויות, מחיר כולל, אמצעי תשלום (מזומן במשלוח).",
+            row5_purpose: "• עיבוד הזמנות ותיאום משלוח<br>• הפקת חשבוניות וקבלות<br>• טיפול בהחזרים וביטולים",
+            
+            // Row 6
+            row6_cat: "לקוחות",
+            row6_data: "<strong>ביקורות והערות:</strong> דירוגים, הערות על מוצרים או שירות משלוח.",
+            row6_purpose: "• שיפור השירותים<br>• שימוש אנונימי בחומרים שיווקיים<br>• שיפור חווית הלקוח",
+            
+            collection_title: "כיצד אנו אוספים מידע",
+            collection_list: '<li><strong>אוטומטית:</strong> כתובת IP, סוג מכשיר, מערכת הפעלה, נתוני שימוש.</li><li><strong>שניתן על ידך בהתנדבות:</strong> בעת יצירת חשבון, הזנת כתובת, יצירת קשר עם התמיכה.</li><li><strong>במהלך מתן השירותים:</strong> מיקום גיאוגרפי בעת בקשת משלוח, אישור קבלה.</li>',
+            
+            thirdparty_title: "שיתוף מידע אישי עם צדדים שלישיים",
+            th_recipient: "קטגוריית הנמען",
+            th_shared_data: "המידע שיועבר",
+            th_shared_purpose: "מטרת ההעברה",
+            
+            rec1: "נהגי משלוח ושותפי משלוח",
+            rec1_data: "שם, מספר טלפון, כתובת מדויקת, מיקום גיאוגרפי, פרטי הזמנה",
+            rec1_purpose: "משלוח ההזמנה לכתובתך, יצירת קשר בעת הצורך",
+            
+            rec2: "ספקי שירותי אנליטיקה (למשל Firebase, Google Analytics)",
+            rec2_data: "נתוני שימוש, כתובת IP, מזהה מכשיר, קריסות",
+            rec2_purpose: "ניתוח ביצועי האפליקציה, שיפור חווית המשתמש, תיקון בעיות טכניות",
+            
+            rec3: "ספק שירות ההתראות (Firebase Cloud Messaging)",
+            rec3_data: "מזהה דחיפה (Push Token)",
+            rec3_purpose: "שליחת התראות Push לגבי סטטוס ההזמנה",
+            
+            rec4: "רשויות משפטיות ורגולטורים",
+            rec4_data: "כל סוגי המידע בהתאם לצורך",
+            rec4_purpose: "עמידה בחוקים, צווים משפטיים, חקירות, מניעת הונאה",
+            
+            sharing_note: "<strong>⚠️ הערה חשובה:</strong> אנו לא מוכרים את המידע האישי שלך לאף צד שלישי. אנו לא משתפים את מספר הטלפון או הכתובת שלך למטרות שיווקיות ללא הסכמה נפרדת ומראש ממך.",
+            
+            security_title: "אבטחת מידע",
+            security_text: "MyKanz נקטה באמצעים טכניים וארגוניים מתאימים כדי לשמור על הנתונים שלך מאובטחים על מנת למנוע אובדן, שימוש לרעה, גישה לא מורשית, חשיפה, שינוי או השמדה, בהתאם לתקנות הגנת הפרטיות (אבטחת מידע), התשע\"ז-2017. האמצעים שלנו כוללים: הצפנת נתונים במעבר, הגבלת גישה לעובדים מורשים בלבד, ובדיקת נהלי אבטחה באופן תקופתי.",
+            breach_text: "אנא צור איתנו קשר בכתובת: privacy@mykanz.com אם אתה מרגיש שהפרטיות שלך לא טופלה כראוי, או אם נודע לך על ניסיון גישה לא מורשית לנתונים שלך. נודיע לך ולרשויות המוסמכות במקרה של גילוי פרצת אבטחה הנוגעת למידע האישי שלך.",
+            
+            transfer_title: "העברות נתונים בינלאומיות",
+            transfer_text: "המידע האישי שלך עשוי להיות מועבר, מעובד ומאוחסן מחוץ לישראל (למשל בשרתי Google Cloud או AWS). חוקי הגנת המידע באותם תחומי שיפוט עשויים להיות שונים. בכל המקרים, אנו נוקטים באמצעים מתאימים כדי להבטיח רמת הגנה מספקת על הנתונים שלך. אתה מספק בזה הסכמה להעברה, עיבוד ואחסון אלה של המידע שלך מחוץ לישראל.",
+            
+            retention_title: "שמירת נתונים",
+            retention_list: '<li><strong>פרטי חשבון:</strong> אנו שומרים אותם כל עוד חשבונך פעיל. בעת בקשת מחיקת חשבון, אנו מוחקים את הנתונים תוך 30 יום.</li><li><strong>היסטוריית הזמנות:</strong> אנו שומרים אותה למשך 7 שנים מסיבות מס ומהלכות חשבונאיות לפי החוק הישראלי.</li><li><strong>נתוני מיקום:</strong> אנו מוחקים אותם 30 יום לאחר השלמת ההזמנה.</li><li><strong>יומני תמיכה ושיחות:</strong> אנו שומרים אותם למשך שנה לפתרון מחלוקות ושיפור השירות.</li><li><strong>נתוני שימוש:</strong> אנו שומרים אותם למשך 12 חודשים למטרות אנליטיות ושיפור האפליקציה.</li>',
+            
+            rights_title: "זכויות פרטיות - לפי חוק הגנת הפרטיות הישראלי 1981",
+            rights_intro: "בהתאם להוראות חוק הגנת הפרטיות הישראלי התשמ\"א-1981 והתקנות הרלוונטיות, יש לך הזכות:",
+            rights_list: '<li><strong>זכות עיון:</strong> לעיין במידע האישי השמור אודותיך במאגרי המידע שלנו.</li><li><strong>זכות תיקון:</strong> לבקש תיקון מידע שגוי, לא שלם או מיושן.</li><li><strong>זכות מחיקה:</strong> לבקש מחיקת חשבונך והנתונים שלך (בכפוף להתחייבויות חוקיות כגון שמירת רישומי הזמנות למשך 7 שנים).</li><li><strong>זכות תלונה:</strong> לפנות לרשות הגנת הפרטיות.</li>',
+            rights_request: "להגשת בקשה לגבי זכויותיך, צור איתנו קשר בכתובת: privacy@mykanz.com ונשיב לפנייתך תוך 30 יום בהתאם ללוחות הזמנים הקבועים בחוק.",
+            
+            database_register: "<strong>📌 רישום מאגר מידע:</strong> במעבר ל-10,000 משתמשים, מאגר הנתונים יירשם אצל רשות הגנת הפרטיות לפי החוק הישראלי.",
+            
+            children_title: "נתוני ילדים",
+            children_text: "השירותים שלנו אינם מיועדים לילדים מתחת לגיל 18. אנו לא אוספים ביודעין מידע על ילדים. אם אתה מתחת לגיל 18, אסור לך להשתמש בשירות אלא בהסכמת הורים לפי החוק.",
+            
+            legal_note: "<strong>הצהרה משפטית:</strong> מדיניות זו כפופה לחוקים הישראליים. במקרה של סתירה בין הגרסה הערבית לעברית, הגרסה העברית תחייב לצורך עמידה בחוק בישראל.",
+            
+            // Terms
+            terms_title: "📜 תנאי שימוש - الشروط والأحكام",
+            terms_accept: "١. הסכמה לתנאים",
+            terms_accept_text: "בשימוש באפליקציית MyKanz, אתה מסכים לתנאים אלה. אם אינך מסכים, אנא אל תשתמש באפליקציה.",
+            terms_eligibility: "٢. כשירות",
+            terms_eligibility_text: "עליך להיות בן 18 ומעלה כדי להשתמש ב-MyKanz. בהגשת הזמנה, אתה מאשר שאתה מתגורר באחת מערי המשלוח שלנו.",
+            terms_cod: "٣. תשלום במזומן עם המשלוח (COD)",
+            terms_cod_list: '<li>התשלום הוא במזומן ישירות לשליח בעת קבלת המוצר.</li><li>אל תיתן כסף למי שאינו שליח רשמי של MyKanz.</li><li>הסכום חייב להתאים לסכום המוצג באפליקציה.</li>',
+            terms_conduct: "٤. התנהגות המשתמש",
+            terms_conduct_text: "אתה מסכים לא להשתמש באפליקציה לפעילות הונאה או להטרדת נהגי משלוח.",
+            terms_liability: "٥. הגבלת אחריות",
+            terms_liability_text: "MyKanz אינה אחראית לעיכובים הנגרמים בשל מזג אוויר, מצבי ביטחון, שביתות או עומסי תנועה בישראל.",
+            terms_warning: "<strong>⚠️ אזהרה:</strong> כל ניסיון להונאה או שימוש לרעה ידווח לרשויות המתאימות בישראל.",
+            
+            // Refund
+            refund_title: "💰 מדיניות החזרים והחלפות - سياسة الإرجاع",
+            refund_damaged: "١. מוצרים פגומים או שגויים",
+            refund_damaged_text: "מכיוון שאתה משלם במזומן עם המשלוח, <strong>בדוק את המוצר לפני מסירת הכסף.</strong>",
+            refund_damaged_list: '<li><strong>זכות סירוב:</strong> אתה רשאי לסרב לקבל את המוצר בדלת. לא תחויב בכל סכום.</li><li><strong>החזרה לאחר קבלה:</strong> אם תבחין בפגם, צור קשר תוך 48 שעות.</li>',
+            refund_cancel: "٢. זכות ביטול (לפי חוק הגנת הצרכן הישראלי)",
+            refund_cancel_text: "על פי החוק, יש לך 14 ימים לבטל את העסקה. ההחזרים יינתנו כיתרת ארנק MyKanz או העברה בנקאית תוך 14 יום.",
+            refund_cancel_list: '<li><strong>חריגים:</strong> לא ניתן להחזיר מוצרים מתכלים, מוצרים אינטימיים, או מוצרים שיוצרו במיוחד לפי הזמנה.</li><li><strong>דמי ביטול:</strong> עשויים להינכות 5% או 100 ש"ח (הנמוך מבניהם).</li>',
+            refund_how: "٣. כיצד להחזיר",
+            refund_how_list: '<li>צור קשר עם התמיכה דרך האפליקציה או אימייל.</li><li>שמור את המוצר באריזותיו המקוריות.</li><li>נסדיר איסוף תוך 3-5 ימים.</li>',
+            
+            // Shipping
+            shipping_title: "🚚 מדיניות משלוחים - سياسة التوصيل",
+            shipping_zones: "١. אזורי משלוח",
+            shipping_zones_text: "אנו מספקים שירות משלוחים לערים המפורטות באפליקציה. <strong>איננו מספקים שירות לאזורים לא מורשים.</strong> ערים זמינות: נצרת, חיפה, יפו, רמלה, לוד, אום אל-פחם, טירה, טייבה, קלנסווה, כפר קאסם ועוד.",
+            shipping_time: "٢. זמן משלוח",
+            shipping_time_list: '<li><strong>זמן טיפול:</strong> 1-2 ימי עסקים (ראשון עד חמישי).</li><li><strong>שילוח:</strong> 2-7 ימי עסקים לפי העיר.</li><li><strong>התראות:</strong> תקבל התראה כשהנהג במרחק 15 דקות.</li>',
+            shipping_failed: "٣. ניסיונות משלוח כושלים",
+            shipping_failed_list: '<li>אם לא היית בבית, הנהג ינסה ליצור קשר פעם אחת.</li><li>אם הניסיון השני נכשל, ההזמנה תבוטל ועשוי להיגרם חיוב של 20 ש"ח.</li>',
+            shipping_fees: "٤. דמי משלוח",
+            shipping_fees_text: "נעים בין 15-35 ש\"ח לפי מרחק. הזמנות מעל 200 ש\"ח זכאיות למשלוח חינם (בערים מסוימות)."
         };
 
-        // Apply Hebrew content
         function setHebrew() {
-            document.body.classList.add('hebrew-mode');
+            // Set RTL
             document.documentElement.lang = "he";
             document.documentElement.dir = "rtl";
+            document.body.style.direction = "rtl";
+            document.body.style.textAlign = "right";
             
+            // Update header
             document.getElementById('main-title').innerText = hebrewContent.main_title;
             document.getElementById('subtitle').innerText = hebrewContent.subtitle;
-            document.getElementById('protection-badge').innerText = hebrewContent.protection_badge;
+            document.getElementById('badge').innerHTML = hebrewContent.badge;
             document.getElementById('last-updated').innerHTML = hebrewContent.last_updated;
             
-            // Privacy
-            document.getElementById('privacy-title').innerHTML = hebrewContent.privacy_title;
-            document.getElementById('privacy-effective').innerHTML = hebrewContent.privacy_effective;
-            document.getElementById('privacy-info-title').innerText = hebrewContent.privacy_info_title;
-            document.getElementById('privacy-list-1').innerHTML = hebrewContent.privacy_list_1;
-            document.getElementById('privacy-use-title').innerText = hebrewContent.privacy_use_title;
-            document.getElementById('privacy-list-2').innerHTML = hebrewContent.privacy_list_2;
-            document.getElementById('privacy-consent-title').innerText = hebrewContent.privacy_consent_title;
-            document.getElementById('privacy-consent-text').innerText = hebrewContent.privacy_consent_text;
-            document.getElementById('privacy-highlight').innerHTML = hebrewContent.privacy_highlight;
-            document.getElementById('privacy-security-title').innerText = hebrewContent.privacy_security_title;
-            document.getElementById('privacy-security-text').innerText = hebrewContent.privacy_security_text;
-            document.getElementById('privacy-rights-title').innerText = hebrewContent.privacy_rights_title;
-            document.getElementById('privacy-rights-text').innerText = hebrewContent.privacy_rights_text;
-            document.getElementById('privacy-register-note').innerHTML = hebrewContent.privacy_register_note;
+            // Privacy main
+            document.getElementById('privacy-main-title').innerHTML = hebrewContent.privacy_main_title;
+            document.getElementById('intro-text').innerText = hebrewContent.intro_text;
+            document.getElementById('user-categories').innerHTML = hebrewContent.user_categories;
+            document.getElementById('policy-note').innerText = hebrewContent.policy_note;
+            document.getElementById('consent-note').innerText = hebrewContent.consent_note;
+            document.getElementById('amendments-title').innerText = hebrewContent.amendments_title;
+            document.getElementById('amendments-text').innerText = hebrewContent.amendments_text;
+            document.getElementById('controller-title').innerText = hebrewContent.controller_title;
+            document.getElementById('company-name').innerHTML = hebrewContent.company_name;
+            document.getElementById('company-address').innerHTML = hebrewContent.company_address;
+            document.getElementById('company-email').innerHTML = hebrewContent.company_email;
+            document.getElementById('company-phone').innerHTML = hebrewContent.company_phone;
+            document.getElementById('data-types-title').innerText = hebrewContent.data_types_title;
+            document.getElementById('data-types-intro').innerText = hebrewContent.data_types_intro;
+            document.getElementById('data-types-list').innerHTML = hebrewContent.data_types_list;
+            document.getElementById('table-title').innerText = hebrewContent.table_title;
+            
+            // Table headers
+            document.getElementById('th-category').innerText = hebrewContent.th_category;
+            document.getElementById('th-data-type').innerText = hebrewContent.th_data_type;
+            document.getElementById('th-purpose').innerText = hebrewContent.th_purpose;
+            
+            // Table rows
+            document.getElementById('row1-cat').innerHTML = hebrewContent.row1_cat;
+            document.getElementById('row1-data').innerHTML = hebrewContent.row1_data;
+            document.getElementById('row1-purpose').innerHTML = hebrewContent.row1_purpose;
+            document.getElementById('row2-cat').innerHTML = hebrewContent.row2_cat;
+            document.getElementById('row2-data').innerHTML = hebrewContent.row2_data;
+            document.getElementById('row2-purpose').innerHTML = hebrewContent.row2_purpose;
+            document.getElementById('row3-cat').innerHTML = hebrewContent.row3_cat;
+            document.getElementById('row3-data').innerHTML = hebrewContent.row3_data;
+            document.getElementById('row3-purpose').innerHTML = hebrewContent.row3_purpose;
+            document.getElementById('row4-cat').innerHTML = hebrewContent.row4_cat;
+            document.getElementById('row4-data').innerHTML = hebrewContent.row4_data;
+            document.getElementById('row4-purpose').innerHTML = hebrewContent.row4_purpose;
+            document.getElementById('row5-cat').innerHTML = hebrewContent.row5_cat;
+            document.getElementById('row5-data').innerHTML = hebrewContent.row5_data;
+            document.getElementById('row5-purpose').innerHTML = hebrewContent.row5_purpose;
+            document.getElementById('row6-cat').innerHTML = hebrewContent.row6_cat;
+            document.getElementById('row6-data').innerHTML = hebrewContent.row6_data;
+            document.getElementById('row6-purpose').innerHTML = hebrewContent.row6_purpose;
+            
+            document.getElementById('collection-title').innerText = hebrewContent.collection_title;
+            document.getElementById('collection-list').innerHTML = hebrewContent.collection_list;
+            document.getElementById('thirdparty-title').innerText = hebrewContent.thirdparty_title;
+            document.getElementById('th-recipient').innerText = hebrewContent.th_recipient;
+            document.getElementById('th-shared-data').innerText = hebrewContent.th_shared_data;
+            document.getElementById('th-shared-purpose').innerText = hebrewContent.th_shared_purpose;
+            document.getElementById('rec1').innerHTML = hebrewContent.rec1;
+            document.getElementById('rec1-data').innerHTML = hebrewContent.rec1_data;
+            document.getElementById('rec1-purpose').innerHTML = hebrewContent.rec1_purpose;
+            document.getElementById('rec2').innerHTML = hebrewContent.rec2;
+            document.getElementById('rec2-data').innerHTML = hebrewContent.rec2_data;
+            document.getElementById('rec2-purpose').innerHTML = hebrewContent.rec2_purpose;
+            document.getElementById('rec3').innerHTML = hebrewContent.rec3;
+            document.getElementById('rec3-data').innerHTML = hebrewContent.rec3_data;
+            document.getElementById('rec3-purpose').innerHTML = hebrewContent.rec3_purpose;
+            document.getElementById('rec4').innerHTML = hebrewContent.rec4;
+            document.getElementById('rec4-data').innerHTML = hebrewContent.rec4_data;
+            document.getElementById('rec4-purpose').innerHTML = hebrewContent.rec4_purpose;
+            document.getElementById('sharing-note').innerHTML = hebrewContent.sharing_note;
+            document.getElementById('security-title').innerText = hebrewContent.security_title;
+            document.getElementById('security-text').innerText = hebrewContent.security_text;
+            document.getElementById('breach-text').innerText = hebrewContent.breach_text;
+            document.getElementById('transfer-title').innerText = hebrewContent.transfer_title;
+            document.getElementById('transfer-text').innerText = hebrewContent.transfer_text;
+            document.getElementById('retention-title').innerText = hebrewContent.retention_title;
+            document.getElementById('retention-list').innerHTML = hebrewContent.retention_list;
+            document.getElementById('rights-title').innerText = hebrewContent.rights_title;
+            document.getElementById('rights-intro').innerText = hebrewContent.rights_intro;
+            document.getElementById('rights-list').innerHTML = hebrewContent.rights_list;
+            document.getElementById('rights-request').innerText = hebrewContent.rights_request;
+            document.getElementById('database-register').innerHTML = hebrewContent.database_register;
+            document.getElementById('children-title').innerText = hebrewContent.children_title;
+            document.getElementById('children-text').innerText = hebrewContent.children_text;
+            document.getElementById('legal-note').innerHTML = hebrewContent.legal_note;
             
             // Terms
             document.getElementById('terms-title').innerHTML = hebrewContent.terms_title;
-            document.getElementById('terms-accept-title').innerText = hebrewContent.terms_accept_title;
+            document.getElementById('terms-accept').innerText = hebrewContent.terms_accept;
             document.getElementById('terms-accept-text').innerText = hebrewContent.terms_accept_text;
-            document.getElementById('terms-eligibility-title').innerText = hebrewContent.terms_eligibility_title;
+            document.getElementById('terms-eligibility').innerText = hebrewContent.terms_eligibility;
             document.getElementById('terms-eligibility-text').innerText = hebrewContent.terms_eligibility_text;
-            document.getElementById('terms-cod-title').innerText = hebrewContent.terms_cod_title;
+            document.getElementById('terms-cod').innerText = hebrewContent.terms_cod;
             document.getElementById('terms-cod-list').innerHTML = hebrewContent.terms_cod_list;
-            document.getElementById('terms-conduct-title').innerText = hebrewContent.terms_conduct_title;
+            document.getElementById('terms-conduct').innerText = hebrewContent.terms_conduct;
             document.getElementById('terms-conduct-text').innerText = hebrewContent.terms_conduct_text;
-            document.getElementById('terms-liability-title').innerText = hebrewContent.terms_liability_title;
+            document.getElementById('terms-liability').innerText = hebrewContent.terms_liability;
             document.getElementById('terms-liability-text').innerText = hebrewContent.terms_liability_text;
             document.getElementById('terms-warning').innerHTML = hebrewContent.terms_warning;
             
             // Refund
             document.getElementById('refund-title').innerHTML = hebrewContent.refund_title;
-            document.getElementById('refund-damaged-title').innerText = hebrewContent.refund_damaged_title;
+            document.getElementById('refund-damaged').innerText = hebrewContent.refund_damaged;
             document.getElementById('refund-damaged-text').innerHTML = hebrewContent.refund_damaged_text;
             document.getElementById('refund-damaged-list').innerHTML = hebrewContent.refund_damaged_list;
-            document.getElementById('refund-cancel-title').innerText = hebrewContent.refund_cancel_title;
+            document.getElementById('refund-cancel').innerText = hebrewContent.refund_cancel;
             document.getElementById('refund-cancel-text').innerText = hebrewContent.refund_cancel_text;
             document.getElementById('refund-cancel-list').innerHTML = hebrewContent.refund_cancel_list;
-            document.getElementById('refund-how-title').innerText = hebrewContent.refund_how_title;
+            document.getElementById('refund-how').innerText = hebrewContent.refund_how;
             document.getElementById('refund-how-list').innerHTML = hebrewContent.refund_how_list;
-            document.getElementById('refund-note').innerHTML = hebrewContent.refund_note;
             
             // Shipping
             document.getElementById('shipping-title').innerHTML = hebrewContent.shipping_title;
-            document.getElementById('shipping-zones-title').innerText = hebrewContent.shipping_zones_title;
+            document.getElementById('shipping-zones').innerText = hebrewContent.shipping_zones;
             document.getElementById('shipping-zones-text').innerHTML = hebrewContent.shipping_zones_text;
-            document.getElementById('shipping-time-title').innerText = hebrewContent.shipping_time_title;
+            document.getElementById('shipping-time').innerText = hebrewContent.shipping_time;
             document.getElementById('shipping-time-list').innerHTML = hebrewContent.shipping_time_list;
-            document.getElementById('shipping-failed-title').innerText = hebrewContent.shipping_failed_title;
+            document.getElementById('shipping-failed').innerText = hebrewContent.shipping_failed;
             document.getElementById('shipping-failed-list').innerHTML = hebrewContent.shipping_failed_list;
-            document.getElementById('shipping-fees-title').innerText = hebrewContent.shipping_fees_title;
+            document.getElementById('shipping-fees').innerText = hebrewContent.shipping_fees;
             document.getElementById('shipping-fees-text').innerText = hebrewContent.shipping_fees_text;
-            document.getElementById('shipping-note').innerHTML = hebrewContent.shipping_note;
             
-            // Contact box
-            const contactBox = document.getElementById('contact-box');
-            contactBox.innerHTML = `<strong>${hebrewContent.contact_title}</strong><br>
-                <p>📧 אימייל: <a href="mailto:support@mykanz.com">support@mykanz.com</a></p>
-                <p>📱 וואטסאפ / טלפון: <a href="tel:+972501234567">+972-50-123-4567</a></p>
-                <p>${hebrewContent.contact_week}</p>
-                <p style="font-size: 13px; margin-top: 10px;">${hebrewContent.contact_response}</p>`;
-        }
-        
-        // Apply Arabic content (default)
-        function setArabic() {
-            document.body.classList.remove('hebrew-mode');
-            document.documentElement.lang = "ar";
-            document.documentElement.dir = "rtl";
-            location.reload(); // Simple reload to restore original HTML
-        }
-        
-        // Language switcher event listeners
-        document.getElementById('btn-arabic').addEventListener('click', setArabic);
-        document.getElementById('btn-hebrew').addEventListener('click', setHebrew);
-        
-        // Set active button styling
-        document.getElementById('btn-arabic').addEventListener('click', function() {
-            document.getElementById('btn-arabic').classList.add('active');
-            document.getElementById('btn-hebrew').classList.remove('active');
-        });
-        
-        document.getElementById('btn-hebrew').addEventListener('click', function() {
+            // Update button states
             document.getElementById('btn-hebrew').classList.add('active');
             document.getElementById('btn-arabic').classList.remove('active');
-        });
+        }
+        
+        function setArabic() {
+            location.reload();
+        }
+        
+        document.getElementById('btn-arabic').addEventListener('click', setArabic);
+        document.getElementById('btn-hebrew').addEventListener('click', setHebrew);
     </script>
 </body>
 </html>
